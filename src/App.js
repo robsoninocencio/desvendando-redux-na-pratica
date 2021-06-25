@@ -1,11 +1,17 @@
-import Video from '../src/components/Video'
-import Sidebar from '../src/components/Sidebar'
+import { Provider } from 'react-redux';
+
+import Video from './components/Video';
+import Sidebar from './components/Sidebar';
+
+import store from './store';
 
 function App() {
   return (
     <div className="App">
-      <Video />
-      <Sidebar />
+      <Provider store={store}>
+        <Video />
+        <Sidebar />
+      </Provider>
     </div>
   );
 }
